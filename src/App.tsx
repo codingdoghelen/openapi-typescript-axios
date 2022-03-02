@@ -3,7 +3,6 @@ import api from "./api";
 import { useQuery } from "react-query";
 import { Users } from "./api/users";
 import { useTranslation } from "react-i18next";
-import { Pet, PetApi } from "./generated-sources/openapi/api";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -13,16 +12,6 @@ function App() {
     return response.data.data;
   });
 
-  // const pets = new PetApi();
-  // const postPetLulu = { name: "lulu", photoUrls: [] } as Pet;
-  // const pet = pets.getPetById(1);
-  // const postPetAdd = pets.addPet(postPetLulu);
-  // const postPet2 = pets.addPet({ name: "lulu", photoUrls: [] });
-
-  // console.log("pet:", pet);
-  // console.log("postPetAdd:", postPetAdd);
-  // console.log("postPet2:", postPet2);
-
   const { data: users, isLoading, error } = query;
 
   if (isLoading) {
@@ -31,25 +20,6 @@ function App() {
 
   if (error) {
     return <p>Error!</p>;
-  }
-  if (!isLoading) {
-    // const pets = new PetApi();
-    // const postPetLulu = { name: "lulu", photoUrls: [] } as Pet;
-    // const pet = pets.getPetById(1);
-    // const postPetAdd = pets.addPet(postPetLulu);
-    // // const postPet2 = pets.addPet({ name: "lulu", photoUrls: [] });
-
-    // console.log("pet:", pet);
-    // console.log("postPetAdd:", postPetAdd);
-    // console.log("postPet2:", postPet2);
-    const pets = new PetApi();
-    console.log("Get getPetwithId:", pets.getPetById(1));
-    console.log(
-      "Post petAdd:",
-      pets.addPet({
-        id: 8102,
-      } as Pet)
-    );
   }
 
   return (
