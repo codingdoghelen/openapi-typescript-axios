@@ -280,7 +280,6 @@ export const PetApiAxiosParamCreator = function (configuration?: Configuration) 
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Access-Control-Allow-Origin'] = BASE_PATH;
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -322,7 +321,6 @@ export const PetApiAxiosParamCreator = function (configuration?: Configuration) 
 
             if (apiKey !== undefined && apiKey !== null) {
                 localVarHeaderParameter['api_key'] = String(apiKey);
-                localVarHeaderParameter['Access-Control-Allow-Origin'] = BASE_PATH;
             }
 
 
@@ -485,7 +483,6 @@ export const PetApiAxiosParamCreator = function (configuration?: Configuration) 
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Access-Control-Allow-Origin'] = BASE_PATH;
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -538,7 +535,6 @@ export const PetApiAxiosParamCreator = function (configuration?: Configuration) 
     
     
             localVarHeaderParameter['Content-Type'] = 'application/x-www-form-urlencoded';
-            localVarHeaderParameter['Access-Control-Allow-Origin'] = BASE_PATH;
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -591,7 +587,6 @@ export const PetApiAxiosParamCreator = function (configuration?: Configuration) 
     
     
             localVarHeaderParameter['Content-Type'] = 'multipart/form-data';
-            localVarHeaderParameter['Access-Control-Allow-Origin'] = BASE_PATH;
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -1049,7 +1044,6 @@ export const StoreApiAxiosParamCreator = function (configuration?: Configuration
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Access-Control-Allow-Origin'] = BASE_PATH;
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -1256,7 +1250,6 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Access-Control-Allow-Origin'] = BASE_PATH;
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -1296,7 +1289,6 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Access-Control-Allow-Origin'] = BASE_PATH;
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -1336,7 +1328,6 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Access-Control-Allow-Origin'] = BASE_PATH;
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -1528,7 +1519,6 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Access-Control-Allow-Origin'] = BASE_PATH;
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
