@@ -1,5 +1,6 @@
 import "./App.css";
 import api from "./api";
+import { useEffect } from "react";
 import { useQuery } from "react-query";
 import { Users } from "./api/users";
 import { useTranslation } from "react-i18next";
@@ -13,17 +14,29 @@ function App() {
     return response.data.data;
   });
 
-  // const pets = new PetApi();
-  // const postPetLulu = { name: "lulu", photoUrls: [] } as Pet;
-  // const pet = pets.getPetById(1);
-  // const postPetAdd = pets.addPet(postPetLulu);
-  // const postPet2 = pets.addPet({ name: "lulu", photoUrls: [] });
-
-  // console.log("pet:", pet);
-  // console.log("postPetAdd:", postPetAdd);
-  // console.log("postPet2:", postPet2);
-
   const { data: users, isLoading, error } = query;
+
+  useEffect(() => {
+    if (!isLoading) {
+      const pets = new PetApi();
+      console.log(
+        "Post petAdd:",
+        pets.addPet({
+          id: 8102,
+        } as Pet)
+      );
+
+      console.log("Get getPetwithId:", pets.getPetById(8102));
+      console.log(
+        "Put updatePet:",
+        pets.updatePet({
+          id: 8102,
+          name: "testing",
+        } as Pet)
+      );
+      console.log("Delete deletePet:", pets.deletePet(8102));
+    }
+  }, [isLoading]);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -31,25 +44,6 @@ function App() {
 
   if (error) {
     return <p>Error!</p>;
-  }
-  if (!isLoading) {
-    // const pets = new PetApi();
-    // const postPetLulu = { name: "lulu", photoUrls: [] } as Pet;
-    // const pet = pets.getPetById(1);
-    // const postPetAdd = pets.addPet(postPetLulu);
-    // // const postPet2 = pets.addPet({ name: "lulu", photoUrls: [] });
-
-    // console.log("pet:", pet);
-    // console.log("postPetAdd:", postPetAdd);
-    // console.log("postPet2:", postPet2);
-    const pets = new PetApi();
-    console.log("Get getPetwithId:", pets.getPetById(1));
-    console.log(
-      "Post petAdd:",
-      pets.addPet({
-        id: 8102,
-      } as Pet)
-    );
   }
 
   return (
