@@ -11,6 +11,7 @@
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
     "axios": "^0.26.0",
+    "cors": "^2.8.5",
     "i18next": "^21.6.12",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -21,6 +22,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "codegen": "openapi-generator-cli generate -i petstore.yaml -t src/api/template -g typescript-axios -o src/api --additional-properties=supportsES6=true,npmVersion=6.9.0,typescriptThreePlus=true",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -3,6 +3,7 @@ import api from "./api";
 import { useQuery } from "react-query";
 import { Users } from "./api/users";
 import { useTranslation } from "react-i18next";
+import { PetApi, Pet} from "./api/api"
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -20,6 +21,19 @@ function App() {
 
   if (error) {
     return <p>Error!</p>;
+  }
+
+  if(!isLoading){
+    const pets = new PetApi();    
+    console.log("Post petAdd:",pets.addPet({
+      "id":8102
+    } as Pet));   
+    console.log("Get getPetwithId:",pets.getPetById(8102));
+    console.log("Put updatePet:",pets.updatePet({
+      "id":8102,
+      "name": "testing"
+    } as Pet))
+    console.log("Delete deletePet:",pets.deletePet(8102))
   }
 
   return (
