@@ -286,7 +286,7 @@ export const PetApiAxiosParamCreator = function (configuration?: Configuration) 
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(pet, localVarRequestOptions, configuration)
-            console.log("addPet localVarRequestOptions:",localVarRequestOptions)
+
             return {
                 url: toPathString(localVarUrlObj),
                 options: localVarRequestOptions,
