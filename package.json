@@ -22,7 +22,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "codegen": "openapi-generator-cli generate -i petstore.yaml -g typescript-axios -o src/api",
+    "codegen": "openapi-generator-cli generate -g typescript-axios -o src/api",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
