@@ -143,18 +143,18 @@ export const {{classname}}AxiosParamCreator = function (configuration?: Configur
                 let mapped = {{paramName}}.map(value => (<any>"{{{dataType}}}" !== "Array<string>") ? JSON.stringify(value) : (value || ""));
                 {{/uniqueItems}}
                 localVarHeaderParameter['{{baseName}}'] = mapped.join(COLLECTION_FORMATS["{{collectionFormat}}"]);
-                localVarHeaderParameter['Access-Control-Allow-Origin'] = BASE_PATH;
+                localVarHeaderParameter['Access-Control-Allow-Origin'] = *;
             }
             {{/isArray}}
             {{^isArray}}
             if ({{paramName}} !== undefined && {{paramName}} !== null) {
                 {{#isString}}
                 localVarHeaderParameter['{{baseName}}'] = String({{paramName}});
-                localVarHeaderParameter['Access-Control-Allow-Origin'] = BASE_PATH;
+                localVarHeaderParameter['Access-Control-Allow-Origin'] = *;
                 {{/isString}}
                 {{^isString}}
                 localVarHeaderParameter['{{baseName}}'] = String(JSON.stringify({{paramName}}));
-                localVarHeaderParameter['Access-Control-Allow-Origin'] = BASE_PATH;
+                localVarHeaderParameter['Access-Control-Allow-Origin'] = *;
                 {{/isString}}
             }
             {{/isArray}}
@@ -183,16 +183,16 @@ export const {{classname}}AxiosParamCreator = function (configuration?: Configur
     {{#vendorExtensions}}{{#hasFormParams}}{{^multipartFormData}}
             localVarHeaderParameter['Content-Type'] = 'application/x-www-form-urlencoded';{{/multipartFormData}}{{#multipartFormData}}
             localVarHeaderParameter['Content-Type'] = 'multipart/form-data';{{/multipartFormData}}
-            localVarHeaderParameter['Access-Control-Allow-Origin'] = BASE_PATH;
+            localVarHeaderParameter['Access-Control-Allow-Origin'] = *;
     {{/hasFormParams}}{{/vendorExtensions}}
     {{#bodyParam}}
             {{^consumes}}
             localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Access-Control-Allow-Origin'] = BASE_PATH;
+            localVarHeaderParameter['Access-Control-Allow-Origin'] = *;
             {{/consumes}}
             {{#consumes.0}}
             localVarHeaderParameter['Content-Type'] = '{{{mediaType}}}';
-            localVarHeaderParameter['Access-Control-Allow-Origin'] = BASE_PATH;
+            localVarHeaderParameter['Access-Control-Allow-Origin'] = *;
             {{/consumes.0}}
 
     {{/bodyParam}}
