@@ -27,6 +27,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm run codegen
+    - run: openapi-generator-cli generate -i petstore.yaml -g typescript-axios -o src/api
     - run: npm run build --if-present
     - run: npm test
