@@ -1,5 +1,6 @@
 import "./App.css";
 import api from "./api";
+import { useEffect } from "react";
 import { useQuery } from "react-query";
 import { Users } from "./api/users";
 import { useTranslation } from "react-i18next";
@@ -15,25 +16,27 @@ function App() {
 
   const { data: users, isLoading, error } = query;
 
+  useEffect(()=>{
+    if(!isLoading){
+      const pets = new PetApi();    
+      console.log("Post petAdd:",pets.addPet({
+        "id":8102
+      } as Pet));   
+      console.log("Get getPetwithId:",pets.getPetById(8102));
+      console.log("Put updatePet:",pets.updatePet({
+        "id":8102,
+        "name": "testing"
+      } as Pet))
+      console.log("Delete deletePet:",pets.deletePet(8102))
+    }
+  },[isLoading])
+
   if (isLoading) {
     return <p>Loading...</p>;
   }
 
   if (error) {
     return <p>Error!</p>;
-  }
-
-  if(!isLoading){
-    const pets = new PetApi();    
-    console.log("Post petAdd:",pets.addPet({
-      "id":8102
-    } as Pet));   
-    console.log("Get getPetwithId:",pets.getPetById(8102));
-    console.log("Put updatePet:",pets.updatePet({
-      "id":8102,
-      "name": "testing"
-    } as Pet))
-    console.log("Delete deletePet:",pets.deletePet(8102))
   }
 
   return (
